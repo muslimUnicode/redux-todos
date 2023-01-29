@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Input from "./components/input/Input";
+import TodoList from "./components/todo-list/TodoList";
+import { useDispatch } from "react-redux";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useDispatch()
+
+    return(
+        <div className="app">
+            <Input dispatch={dispatch}/>
+            <TodoList dispatch={dispatch}/>
+        </div>
+    )
 }
 
 export default App;
